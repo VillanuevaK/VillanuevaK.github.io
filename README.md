@@ -1,2 +1,2 @@
-# VillanuevaK.github.io
-Website I made using html, css, and java script with the bootstrap framework.
+# website
+Website I made using html, css, and JavaScript with the Bootstrap framework.
