@@ -1,0 +1,100 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Hide all overflow */
+  height: 100%; /* Ensure full height */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure container takes full height of viewport */
+  width: 100%;
+}
+
+.responsive-image {
+  flex: 1; /* Allow image to grow and fill container */
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.your-self {
+  position: absolute;
+  left: 626.96px;
+  top: 150px;
+  width: 63%;
+  height: 85%;
+  z-index: 10; /* Ensure it's on top of other content */
+}
+
+/* Glitch effect styles */
+.channel-split-static {
+  opacity: 0; /* Initially hidden */
+  position: absolute; /* Ensure it's on top */
+  animation: fade-in 1s 1s forwards; /* Fade in after 1 second and stay visible */
+}
+
+.channel-split {
+  position: absolute;
+  mix-blend-mode: difference; /* Use blend mode for RGB effect */
+}
+
+/* Glitch effect normal state after 1 second */
+.channel-split.normal {
+  mix-blend-mode: normal; /* Reset blend mode to normal */
+  animation: none; /* Remove any glitch animations */
+}
+
+.channel-split-red,
+.channel-split-green,
+.channel-split-blue {
+  position: absolute; /* Position all channels the same way */
+}
+
+.channel-split-red {
+  color: #f00;
+  animation: ANIMATE-RED 2000ms 1;
+}
+
+.channel-split-green {
+  color: #0f0;
+}
+
+.channel-split-blue {
+  color: #00f;
+  animation: ANIMATE-BLUE 2000ms 1;
+}
+
+@keyframes ANIMATE-RED {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    transform: translate(10px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes ANIMATE-BLUE {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, 0px);
+  }
+  50% {
+    transform: translate(-10px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+
+
