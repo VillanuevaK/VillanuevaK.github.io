@@ -1,99 +1,217 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Hide all overflow */
-  height: 100%; /* Ensure full height */
+  overflow: hidden;
+  height: 100%;
+  font-family: 'Aldrich', sans-serif;
 }
 
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure container takes full height of viewport */
+  min-height: 100vh;
   width: 100%;
 }
 
+.media-wrapper {
+  position: relative; /* Ensure that everything inside is positioned relative to this */
+  width: 100%;
+  height: auto;
+}
+
 .responsive-image {
-  flex: 1; /* Allow image to grow and fill container */
-  max-width: 100%;
-  height: auto; /* Maintain aspect ratio */
+  width: 100%; /* Full width for the background image */
+  height: auto;
+  position: relative;
+  z-index: 1; /* Ensure it's the background */
 }
 
 .your-self {
   position: absolute;
-  left: 626.96px;
-  top: 150px;
-  width: 63%;
-  height: 85%;
-  z-index: 10; /* Ensure it's on top of other content */
+  left: 29%; /* Use percentage for proportional positioning */
+  top: 12%; /* Adjust based on desired position relative to background */
+  width: 70%; /* Use percentage for responsive sizing */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 3;
 }
 
-/* Glitch effect styles */
-.channel-split-static {
-  opacity: 0; /* Initially hidden */
-  position: absolute; /* Ensure it's on top */
-  animation: fade-in 1s 1s forwards; /* Fade in after 1 second and stay visible */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100vw); /* Start off the screen on the right */
+    opacity: 1; /* Optional: fade in effect */
+  }
+  100% {
+    transform: translateX(0); /* End at its default position */
+    opacity: 1; /* Optional: fully visible */
+  }
 }
 
-.channel-split {
+.name {
   position: absolute;
-  mix-blend-mode: difference; /* Use blend mode for RGB effect */
+  left: 10%; /* Use percentage for proportional positioning */
+  top: 3%; /* Adjust based on desired position relative to background */
+  width: 52%; /* Use percentage for responsive sizing */
+  height: auto;
+  z-index: 3;
+  animation: slideIn 2s ease-out;
 }
 
-/* Glitch effect normal state after 1 second */
-.channel-split.normal {
-  mix-blend-mode: normal; /* Reset blend mode to normal */
-  animation: none; /* Remove any glitch animations */
-}
-
-.channel-split-red,
-.channel-split-green,
-.channel-split-blue {
-  position: absolute; /* Position all channels the same way */
-}
-
-.channel-split-red {
-  color: #f00;
-  animation: ANIMATE-RED 2000ms 1;
-}
-
-.channel-split-green {
-  color: #0f0;
-}
-
-.channel-split-blue {
-  color: #00f;
-  animation: ANIMATE-BLUE 2000ms 1;
-}
-
-@keyframes ANIMATE-RED {
+@keyframes slideUp {
   0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(-5px, 0px);
-  }
-  50% {
-    transform: translate(10px, 10px);
+    transform: translateY(100vw); /* Start off the screen on the right */
+    opacity: 1; /* Optional: fade in effect */
   }
   100% {
-    transform: translate(0, 0);
+    transform: translateY(0); /* End at its default position */
+    opacity: 1; /* Optional: fully visible */
   }
 }
 
-@keyframes ANIMATE-BLUE {
+.initials {
+  position: absolute;
+  left: 80%; /* Use percentage for proportional positioning */
+  top: 5%; /* Adjust based on desired position relative to background */
+  width: 14%; /* Use percentage for responsive sizing */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 2;
+  animation: slideUp 2s ease-out;
+}
+
+@keyframes slideDown {
   0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(5px, 0px);
-  }
-  50% {
-    transform: translate(-10px, -10px);
+    transform: translateY(-100vw); /* Start off the screen on the right */
+    opacity: 1; /* Optional: fade in effect */
   }
   100% {
-    transform: translate(0, 0);
+    transform: translateY(0); /* End at its default position */
+    opacity: 1; /* Optional: fully visible */
   }
 }
+
+.bluCirc {
+  position: absolute;
+  left: 50%; /* Use percentage for proportional positioning */
+  top: 5%; /* Adjust based on desired position relative to background */
+  width: 8%; /* Use percentage for responsive sizing */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 2;
+  animation: slideDown 2s ease-out;
+}
+
+.bluCircAnim {
+  position: absolute;
+  left: 50%; /* Use percentage for proportional positioning */
+  top: 3.5%; /* Adjust based on desired position relative to background */
+  width: 8%; /* Use percentage for responsive sizing */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 2;
+  animation: slideDown 2s ease-out;
+}
+
+.menu {
+  position: absolute;
+  left: 7%; /* Use percentage for proportional positioning */
+  top: 28%; /* Adjust based on desired position relative to background */
+  width: 26%; /* Use percentage for responsive sizing */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 2;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0); /* Start at the original position */
+  }
+  50% {
+    transform: translateY(-5px); /* Move up by 10px */
+  }
+  100% {
+    transform: translateY(0); /* Return to the original position */
+  }
+}
+
+.id {
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  width: 3%;
+  height: auto;
+  z-index: 2;
+  animation: float 2s ease-in-out infinite; /* 3s for a smooth floating effect, infinite looping */
+}
+
+.save {
+  position: absolute;
+  left: 10.5%;
+  top: 35.2%;
+  width: 2%;
+  height: auto;
+  z-index: 2;
+  animation: float 2s ease-in-out infinite; /* 3s for a smooth floating effect, infinite looping */
+}
+
+.phone {
+  position: absolute;
+  left: 10.6%;
+  top: 40%;
+  width: 1.7%;
+  height: auto;
+  z-index: 2;
+  animation: float 2s ease-in-out infinite; /* 3s for a smooth floating effect, infinite looping */
+}
+
+.menu-container {
+  position: absolute; /* Ensure it stays in the intended position */
+  left: 0%; /* Original position */
+  top: 28%; /* Original position */
+  width: 100%; /* Original size */
+  height: auto; /* Adjust height as needed, or set a specific value */
+  z-index: 2; /* Ensure it’s on top of the background */
+  /* Remove any test styles such as borders, backgrounds, etc. */
+  /* border: none; */
+  /* background: none; */
+}
+
+
+.menu {
+  position: absolute;
+  left: 7%; /* Original position */
+  top: 28%; /* Original position */
+  width: 26%; /* Original size */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 2;
+}
+
+.styled-text {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  font-size: 3vw;
+  color: #fff;
+  z-index: 5;
+  transform: translateY(-20%);
+}
+
+.styled-text2 {
+  position: absolute;
+  top: 80%;
+  left: 15%;
+  font-size: 3vw;
+  color: #fff;
+  z-index: 5;
+  transform: translateY(140%);
+}
+
+.styled-text3 {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  font-size: 3vw;
+  color: #fff;
+  z-index: 5;
+  transform: translateY(300%);
+}
+
+
 
 
 
