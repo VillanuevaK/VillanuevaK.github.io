@@ -88,17 +88,7 @@ html, body {
   }
 }
 
-.bluCirc {
-  position: absolute;
-  left: 50%; /* Use percentage for proportional positioning */
-  top: 5%; /* Adjust based on desired position relative to background */
-  width: 8%; /* Use percentage for responsive sizing */
-  height: auto; /* Maintain aspect ratio */
-  z-index: 2;
-  animation: slideDown 2s ease-out;
-}
-
-.bluCircAnim {
+.neonCircle {
   position: absolute;
   left: 50%; /* Use percentage for proportional positioning */
   top: 3.5%; /* Adjust based on desired position relative to background */
@@ -160,15 +150,22 @@ html, body {
 }
 
 .menu-container {
-  position: absolute; /* Ensure it stays in the intended position */
-  left: 0%; /* Original position */
-  top: 28%; /* Original position */
-  width: 100%; /* Original size */
-  height: auto; /* Adjust height as needed, or set a specific value */
-  z-index: 2; /* Ensure it’s on top of the background */
-  /* Remove any test styles such as borders, backgrounds, etc. */
-  /* border: none; */
-  /* background: none; */
+  position: absolute;
+  left: 0%;
+  top: 28%;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+
+.menu-item {
+  position: relative;
+  display: block;
+  margin-bottom: 20px; /* Adjust spacing between items */
+}
+
+.menu-content {
+  position: relative;
 }
 
 
