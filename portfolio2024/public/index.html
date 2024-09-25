@@ -24,6 +24,12 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="%PUBLIC_URL%/HomeBG.png" as="image" />
+    <link rel="preload" href="%PUBLIC_URL%/About.png" as="image" />
+    <link rel="preload" href="%PUBLIC_URL%/Work.png" as="image" />
+    <link rel="preload" href="%PUBLIC_URL%/Contact.png" as="image" />
 
     <!-- Inside public/index.html -->
     <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
